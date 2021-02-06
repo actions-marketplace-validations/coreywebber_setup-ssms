@@ -20,7 +20,7 @@ async function run(): Promise<void> {
       } 
     }
     // extract the folder location for the tool
-    const toolFolderPath = path.dirname(toolPath)
+    const toolFolderPath = toolPath //path.dirname(toolPath)
     // set the outputs for the action to the folder path of msbuild
     core.setOutput('ssmsPath', toolFolderPath)
     // add tool path to PATH

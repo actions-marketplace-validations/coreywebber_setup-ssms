@@ -136,7 +136,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const core = __importStar(__webpack_require__(470));
 const fs = __importStar(__webpack_require__(747));
-const path = __importStar(__webpack_require__(622));
 const IS_WINDOWS = process.platform === 'win32';
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -155,7 +154,7 @@ function run() {
                 }
             }
             // extract the folder location for the tool
-            const toolFolderPath = path.dirname(toolPath);
+            const toolFolderPath = toolPath; //path.dirname(toolPath)
             // set the outputs for the action to the folder path of msbuild
             core.setOutput('ssmsPath', toolFolderPath);
             // add tool path to PATH
