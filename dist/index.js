@@ -147,9 +147,9 @@ function run() {
                 return;
             }
             // test paths
-            let toolPath = 'C:\\Program Files (x86)\\Microsoft SQL Server Management Studio 18\\Common7\\IDE';
+            let toolPath = 'C:\\Program Files (x86)\\Microsoft SQL Server Management Studio 18\\Common7\\IDE\\';
             if (!fs.existsSync(toolPath)) {
-                let toolPath = 'C:\\Program Files (x86)\\Microsoft SQL Server\\140\\Tools\\Binn\\ManagementStudio';
+                let toolPath = 'C:\\Program Files (x86)\\Microsoft SQL Server\\140\\Tools\\Binn\\ManagementStudio\\';
                 if (!fs.existsSync(toolPath)) {
                     core.setFailed('Unable to find Microsoft SQL Server Management Studio path.');
                 }
