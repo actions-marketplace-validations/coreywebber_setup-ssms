@@ -1,11 +1,11 @@
-# coreywebber/setup-ssas-deployment
-This adds the path to SSMS into PATH and allows you to call the utilities like Microsoft.AnalysisServices.Deployment in order to deploy order to deploy SSAS projects
+# coreywebber/setup-ssms
+This adds the path to SSMS into PATH and allows you to call the utilities like Microsoft.AnalysisServices.Deployment in order to deploy order to deploy SSAS projects. It will require however that SQL Server Management Studio v18 or v17 be installed on the machine where the runner is hosted.
 
 ## Usage
 
 ```yml
 - name: Add Microsoft.AnalysisServices.Deployment to PATH
-  uses: coreywebber/setup-ssas-deployment@v1.0.0
+  uses: coreywebber/setup-ssms@v1
 ```
 
 ## Building this repo
