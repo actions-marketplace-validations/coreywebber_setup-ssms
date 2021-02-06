@@ -11,25 +11,21 @@ async function run(): Promise<void> {
       core.setFailed('setup-ssms can only be run on Windows runners')
       return
     }
-    
+    // test paths
     let toolPath = 'C:\\Program Files (x86)\\Microsoft SQL Server Management Studio 18\\Common7\\IDE'
-
     if (!fs.existsSync(toolPath)) { 
       let toolPath = 'C:\\Program Files (x86)\\Microsoft SQL Server\\140\\Tools\\Binn\\ManagementStudio'
       if (!fs.existsSync(toolPath)) { 
         core.setFailed('Unable to find Microsoft SQL Server Management Studio path.')
       } 
     }
-
     // extract the folder location for the tool
     const toolFolderPath = path.dirname(toolPath)
-
     // set the outputs for the action to the folder path of msbuild
     core.setOutput('ssmsPath', toolFolderPath)
-
     // add tool path to PATH
     core.addPath(toolFolderPath)
-    core.debug(`Tool path added to PATH: ${toolFolderPath}`)
+    core.info(`Tool path added to PATH: ${toolFolderPath}`)
   } catch (error) {
     core.setFailed(error.message)
   }

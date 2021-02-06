@@ -146,6 +146,7 @@ function run() {
                 core.setFailed('setup-ssms can only be run on Windows runners');
                 return;
             }
+            // test paths
             let toolPath = 'C:\\Program Files (x86)\\Microsoft SQL Server Management Studio 18\\Common7\\IDE';
             if (!fs.existsSync(toolPath)) {
                 let toolPath = 'C:\\Program Files (x86)\\Microsoft SQL Server\\140\\Tools\\Binn\\ManagementStudio';
@@ -159,7 +160,7 @@ function run() {
             core.setOutput('ssmsPath', toolFolderPath);
             // add tool path to PATH
             core.addPath(toolFolderPath);
-            core.debug(`Tool path added to PATH: ${toolFolderPath}`);
+            core.info(`Tool path added to PATH: ${toolFolderPath}`);
         }
         catch (error) {
             core.setFailed(error.message);
