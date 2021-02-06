@@ -1,0 +1,13 @@
+name: 'setup-ssms'
+description: 'Helps set up Microsoft.AnalysisServices.Deployment and other tools into PATH for later usage.'
+author: 'Corey Webber'
+branding:
+  color: blue
+  icon: terminal
+outputs:
+  ssmsPath:
+    description: 'The resulting location of Microsoft SQL Server Management Studio directory for your inputs'
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
